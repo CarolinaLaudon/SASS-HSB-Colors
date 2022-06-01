@@ -1,0 +1,47 @@
+/* RENDERS TO RGB */
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a)
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+/* RGB & CMYK */
+$colors:  (
+  "red": 0,
+  "yellow":60,
+  "green": 120,
+  "cyan":180,
+  "blue":240,
+  "magenta": 300
+);
+
+/* FETCH COLOR IN ARRAY */
+@function color($color){
+  @return map-get($colors, $color);
+}
+
+/* SCALE */
+.hsbScale {
+  &.hsbRed { 
+    $colorvalue: color("red");
+    &.clr-50 {background-color: hsb($colorvalue, 100, 100, 0.1);}
+    &.clr-100 {background-color: hsb($colorvalue, 100, 100, 0.25);}
+    &.clr-200 {background-color: hsb($colorvalue, 100, 100, 0.45);}
+    &.clr-300 {background-color: hsb($colorvalue, 100, 100, 0.7);}
+    &.clr-400 {background-color: hsb($colorvalue, 100, 100, 1);}
+    &.clr-500 {background-color: hsb($colorvalue, 100, 75, 1);}
+    &.clr-600 {background-color: hsb($colorvalue, 100, 55, 1);}
+    &.clr-700 {background-color: hsb($colorvalue, 100, 35, 1);}
+    &.clr-800 {background-color: hsb($colorvalue, 100, 25, 1);}
+    &.clr-900 {background-color: hsb($colorvalue, 100, 10,1);}
+    }
+}
+
+/*
+// IN USE : => 
+    <div class="hsbScale hsbRed clr-50"></div>
+*/
