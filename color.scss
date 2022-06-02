@@ -10,7 +10,7 @@
 }
 
 /* RGB & CMYK */
-$colors:  (
+$primaryColors:  (
   "red": 0,
   "yellow":60,
   "green": 120,
@@ -21,7 +21,7 @@ $colors:  (
 
 /* FETCH COLOR IN ARRAY */
 @function color($color){
-  @return map-get($colors, $color);
+  @return map-get($primaryColors, $color);
 }
 
 /* SCALE */
