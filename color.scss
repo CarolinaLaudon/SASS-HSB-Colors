@@ -9,25 +9,8 @@
   }
 }
 
-/* RGB & CMYK */
-$primaryColors:  (
-  "red": 0,
-  "yellow":60,
-  "green": 120,
-  "cyan":180,
-  "blue":240,
-  "magenta": 300
-);
-
-/* FETCH COLOR IN ARRAY */
-@function color($color){
-  @return map-get($primaryColors, $color);
-}
-
-/* SCALE */
-.hsbScale {
-  &.hsbRed { 
-    $colorvalue: color("red");
+/* MIXIN FOR COLOR SCALE */
+@mixin colorScale($colorvalue){ 
     &.clr-50 {background-color: hsb($colorvalue, 100, 100, 0.1);}
     &.clr-100 {background-color: hsb($colorvalue, 100, 100, 0.25);}
     &.clr-200 {background-color: hsb($colorvalue, 100, 100, 0.45);}
@@ -38,10 +21,27 @@ $primaryColors:  (
     &.clr-700 {background-color: hsb($colorvalue, 100, 35, 1);}
     &.clr-800 {background-color: hsb($colorvalue, 100, 25, 1);}
     &.clr-900 {background-color: hsb($colorvalue, 100, 10,1);}
-    }
+}
+
+$colorWheal: 0;
+@while $colorWheal <= 360 {
+  .clr#{$colorWheal} {
+    @include colorScale($colorWheal);
+  }
+  $colorWheal: $colorWheal + 1;
 }
 
 /*
-// IN USE : => 
-  <div class="hsbScale hsbRed clr-50"></div>
+  // IN USE FOR (PRIMARY RED:
+  .clr0.clr-400 {
+  background-color: rgba(255, 0, 0, 1);
+  }
+  // IN USE FOR PRIMARY GREEN:
+  .clr120.clr-400 {
+  background-color: rgba(0, 255, 0, 1);
+  }
+  // IN USE FOR PRIMARY BLUE:
+  .clr240.clr-400 {
+  background-color: rgba(0, 0, 255, 1);
+  }
 */
