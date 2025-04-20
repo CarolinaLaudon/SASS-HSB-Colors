@@ -1,0 +1,275 @@
+/*
+Part 0 – Basic setting 
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0px !important;
+  padding: 0 20px;
+}
+
+p {
+  font-family: ' Noto Sans Display', sans-serif;
+  font-size: 1em;
+  line-height: 1.618;
+}
+
+.linkSet {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  font-family: 'Noto Sans Display', Arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.618;
+  font-weight: 100;
+  text-decoration: none;
+  color:white;
+}
+
+.linkSet>a{
+  width: 14.2vw;
+}
+
+
+/*
+Part 1 – HOW TO ADD A FONT
+*/
+/* 
+Recursive, static light weight
+@font-face {
+  font-family: 'Recursive';
+  src: url('https://fonts.googleapis.com/css2?family=Recursive:300');
+}
+
+Recursive, variable
+@font-face {
+  font-family: 'Recursive';
+  src: url('https://fonts.googleapis.com/css2?family=Recursive:wght@300');
+}
+
+Recursive, variable full axis
+@font-face {
+  font-family: 'Recursive';
+  src: url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000');
+} 
+*/
+
+/* Fallback font to system font */
+h1 {
+  font-family: 'Alegreya', serif;
+  letter-spacing: 2px;
+  font-size: 2em;
+  line-height: 1.3;
+  padding-left: 4rem;
+}
+
+/* Check if there is support for Variable font by checking if font-variation-settings exists
+  @supports (font-variation-settings: light){
+    h1 {
+      font-family: 'Roboto Flex', sans-serif;
+      font-weight: 100;
+    }
+  }
+ */
+
+/*
+Part 2 – SOURCE CODE PRO - HOW TO ADD FONT LOCALLY
+*/
+
+/* Self-hosting variable fonts */
+@font-face {
+  font-family: Source Code Pro;
+  src: 
+    url('..path/to/fonts/SourceCodePro-VariableFont.woff2') 
+    format('woff2 supports variations'),
+    url('..path/to/fonts/SourceCodePro-VariableFont.woff2') 
+    format('woff2-variations');
+  font-stretch: 25% 150%;
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+
+h2 {
+  font-family: 'Noto Sans Display', sans-serif;
+  font-variation-settings: 'ital' 1,'wdth' 62.5, 'wght' 100;
+  font-size: 2em;
+  line-height: 1.3;
+  padding-left: 4rem;
+}
+
+
+p {
+  font-weight: 350;
+}
+
+/*
+Part 5
+*/
+
+strong {
+  font-weight: 575.78;
+}
+
+/* Support for 5 Registered axis */
+.robotoFlex {
+  line-height: 1.3;
+  padding-left: 4rem;
+  letter-spacing: 1.7px;
+
+  font-family: "Roboto Flex", sans-serif;
+  /* 1. font-weight */
+  font-weight: 203.45;
+  font-variation-settings: 'wght' 625;
+
+  /* 2. font-stretch OR font-width*/
+  font-stretch: condensed;
+  font-stretch: 20% 80%;  /*font-stretch: [low]% [high]%;*/
+  font-variation-settings: 'wdth' 150; /*font-stretch: 100%;*/
+
+  /* 3. font-style: italic;
+  font-style: italic;
+  font-synthesis: none;  prevents faux-italic;  
+  font-variation-settings: 'ital' 0;
+  */
+
+  /* 4. font-style: oblique/slanted; OR slanted*/
+  font-style: oblique 14deg;
+  font-variation-settings: 'slnt' -4;
+
+  /* 5. font-optical: */
+  font-size: 36px;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 36;
+}
+
+/*
+Part 6 – RECURSIVE – Support for infinitive custom axis
+*/
+
+/* Embedding a Font Subset*/
+h3 {
+  font-family: 'Recursive', sans-serif;
+  font-variation-settings: 'slnt' -6, 'wght' 245.67, 'CASL' 0.72,'CRSV' 0.72, 'MONO' 0.49;
+  font-size: 2em;
+  line-height: 1.3;
+  padding-left: 4rem;
+}
+
+/*
+Part h4 – 'Noto Sans Display', sans-serif;
+Creating dark mood with Variable Fonts 
+*/
+.fraunces {
+  font-family: 'Fraunces', serif;
+}
+
+h4 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;  /* 0..1 */
+  font-variation-settings: 'opsz' 36;  /* 9..144 */
+  font-weight: 900;   /* 100..900 */
+  font-variation-settings: 'SOFT' 50;  /* 0..100 */
+  font-variation-settings: 'WONK' 0;  /* 0..1 */
+  color: rgb(41, 4, 67);
+  font-size: 36px;
+  line-height: 1.3;
+  padding-left: 4rem;
+  letter-spacing: 0.025em;
+}
+
+@media (prefers-color-scheme: dark){
+  h4 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'ital' 0;  /* 0..1 */
+    font-variation-settings: 'opsz' 36;  /* 9..144 */
+    font-weight: 100;   /* 100..900 */
+    font-variant: 'SOFT' 50;  /* 0..100 */
+    font-variant: 'WONK' 1;  /* 0..1 */
+    color: rgb(245, 248, 231);
+    letter-spacing: 0.02em;
+    background-color: rgb(1, 1, 22);
+    line-height: 4rem;
+  }
+}
+
+/*
+Part 9 – Josefin Slab
+*/
+
+/* Change font width with Variable Fonts depending on viewport */
+
+h5 {
+  font-family: 'Josefin Slab', sans-serif;
+  --weight: 200;
+  font-weight: var(--weight);
+  font-size: 5vw;
+  line-height: 1.3;
+  padding-left: 4rem;
+}
+
+/*
+Part 7 – FRAUNCES
+*/
+
+/* Creating an animation with Variable Fonts */
+h6 {
+  font-family: 'Archivo', sans-serif;
+  line-height: 1.3;
+  padding-left: 4rem;
+  font-size:2rem;
+  /* Animation */
+  animation-name: h6Animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes h6Animation {
+  from {
+      font-variation-settings: 'wght' 100;  /* 100..900 */
+      color: #bf008c;
+    }
+
+    to {
+      font-variation-settings: 'wght' 900;  /* 100..900 */
+      color: #4000bf;
+    }
+}
+
+
+.square {
+  font-family: 'Fraunces', serif;
+  line-height: 7rem;
+  letter-spacing: normal;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  from {
+    font-size:0.6rem; 
+    font-variation-settings: 'ital' 1,  'opsz' 9, 'wght' 100, 'SOFT' 0, 'WONK' 0;
+  }
+  to {
+    font-size:7rem;
+    font-variation-settings: 'ital' 1,  'opsz' 9, 'wght' 900, 'SOFT' 0, 'WONK' 0;
+  }
+}
+
+
+.headerstyle { 
+  text-align: center; 
+  font-family: 'Fraunces', serif;
+  /*ital,opsz,wght,SOFT,WONK@0..1,9..144,100..900,0..100,0..1*/
+  font-variation-settings: 'ital' 1,'opsz' 100, 'wght' 100, 'SOFT' 200,'WONK' 1;
+  letter-spacing: normal; 
+  color:black;
+  font-weight: 100;
+}

@@ -1,0 +1,54 @@
+
+/* Variable Cheatsheet by Carolina Laudon 24 March 2021*/
+
+
+
+.recursive {
+  color:rgb(224, 47, 224);
+  font-family: 'Recursive', sans-serif;
+}
+
+
+/* Current five standard axes a font can include*/
+/* Weight, to control lightness and boldness */
+.wght {
+  font-variation-settings: 'wght' 100;
+}
+
+/* Width, to control overall letter width */
+.wdth {
+  font-family: 'Archivo', sans-serif;
+  font-variation-settings: 'wdth' 800;
+}
+
+/* Optical Size, to control adjustments for readability at various sizes */
+.opsz {
+  font-variation-settings: 'opsz' 1;
+}
+
+/* Italic, to switch between regular/italic */
+.ital {
+  font-variation-settings: 'ital' 1;
+}
+
+/* Slant, to control upright-to-slanted */
+.slnt {
+  font-variation-settings: 'slnt' -10;
+}
+
+
+/* Three custom axes specially for Recursive*/
+/* (Sans/proportional) */
+.mono {
+  font-variation-settings: 'MONO' 1;
+}
+
+/* (Linear/normal) */
+.casl {
+  font-variation-settings: 'CASL' 1;
+}
+
+/* (Roman/non-cursive lowercase) */
+.crsv {
+  font-variation-settings: 'CRSV' 1;
+}

@@ -1,0 +1,29 @@
+// THIS MIXIN FUNCTIONS SETS A FLEXBOX
+
+@mixin flexGrid($direction, $alignChild, $justifyChild, $align) {
+  display: flex;
+
+  // flex-direction: row | row-reverse | column | column-reverse;
+  flex-direction: $direction;  
+
+  // flex-wrap: nowrap | wrap | wrap-reverse;
+  flex-wrap: wrap;
+
+  // align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+  align-content: $alignChild;
+
+  // justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right;
+  justify-content: $justifyChild; 
+
+  // align-items: center | flex-start | flex-end | stretch | baseline;
+  align-items: $align; 
+
+  //overflow: auto; // No scrollbar
+  overflow: hidden;
+} 
+// IN USE:   @include flexGrid(row, center, space-between, center);
+// IN USE:   @include flexGrid(column, center, center, center);
+
+.flexbox{
+  @include flexGrid(row, center, center, center);
+}

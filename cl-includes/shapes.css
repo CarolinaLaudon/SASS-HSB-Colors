@@ -1,0 +1,49 @@
+.circle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+  line-height: 10rem;
+  margin: 1rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.square {
+  width: 8vw;
+  height: 12rem;
+  line-height: 10rem;
+  margin: 1rem 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.linkItem {
+  min-height: 3rem;
+  width: 400px;
+  padding: 8px;
+  color: white;
+}
+
+.userSquare {
+  width: 8vw;
+  height: 12rem;
+  line-height: 10rem;
+  margin: 1rem 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+}
+/*# sourceMappingURL=shapes.css.map */
